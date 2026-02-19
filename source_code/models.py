@@ -14,7 +14,7 @@ def train_log_reg(X_train, y_train, seed=7): #We train a logistic regression mod
     model.fit(X_train, y_train)
     return model
 
-def train_svm(X_train, y_train, seed=7): #Here we train a linear SVM which is used as a secondary baseline.
+def train_svm(X_train, y_train, seed=7): #Here we train a linear SVM.
     #Here, we instantiate the model. 
     #The dual auto parameter allows python to automatically choose which way to optimize according to the data shape.
     model = LinearSVC(random_state=seed, dual='auto') 
