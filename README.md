@@ -1,5 +1,6 @@
 NLP-Assignment-1-Classical-Baselines-Evaluation-Pack Project Repository
 
+"""text
 Project Structure
 .
 ├── main.py
@@ -10,5 +11,6 @@ Project Structure
 │   ├── models.py
 │   └── evaluation.py
 └── svm_errors.csv
+"""
 
-Command to reproduce results: run main.py
+Command to reproduce results: run "python main.py"
