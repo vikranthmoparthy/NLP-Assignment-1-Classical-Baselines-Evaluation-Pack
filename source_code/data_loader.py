@@ -3,7 +3,7 @@ This file loads the AG news dataset from Huggingface, converts it to pandas Data
 In writing this code, we looked up some documentation, which is listed below:
 Sources:
     HuggingFace dataset loading: https://shorturl.at/nLkoe
-    HugginFace dataset pandas conversion: https://shorturl.at/7oBMa
+    HuggingFace dataset pandas conversion: https://shorturl.at/7oBMa
     Stratified Splitting: https://shorturl.at/7FIUj
 """
 
