@@ -9,7 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 
 def train_log_reg(X_train, y_train, seed=7): #We train a logistic regression model using TD-IDF features.
-    #We set a seed for reproducibility and max iterations of 1000, which was a typical number we set in previous projects.
+    #We set a seed for reproducibility and max iterations of 1000, which was a typical number we set in previous ML projects.
     model = LogisticRegression(random_state=seed, max_iter=1000) 
     model.fit(X_train, y_train)
     return model
