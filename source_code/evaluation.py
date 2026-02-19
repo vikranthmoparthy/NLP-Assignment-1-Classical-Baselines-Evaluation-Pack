@@ -11,8 +11,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
 
-def evaluate_model(model, X_features, y_true): #Function to compute accuracy and macro-f1
-    y_pred = model.predict(X_features)
+def evaluate_model(model, x_features, y_true): #Function to compute accuracy and macro-f1
+    y_pred = model.predict(x_features)
     
     acc = accuracy_score(y_true, y_pred)
     f1 = f1_score(y_true, y_pred, average='macro')
@@ -33,7 +33,7 @@ def plot_confusion_matrix(y_true, y_pred, label_names=None):
     plt.show()
 
 #Function that extracts and organizes samples where the model predicted the wrong category
-def get_misclassified_examples(X_text, y_true, y_pred, label_names=None): 
+def get_misclassified_examples(x_text, y_true, y_pred, label_names=None): 
     #Here, we convert numeric class IDs back to readable names e.g."Sports".
     if label_names is not None:
         try:
@@ -43,7 +43,7 @@ def get_misclassified_examples(X_text, y_true, y_pred, label_names=None):
             pass
     
     #We create a dataframe to filter and view text alongside its labels.
-    df_predictions = pd.DataFrame({'text': X_text, 'true_label': y_true,'pred_label': y_pred})
+    df_predictions = pd.DataFrame({'text': x_text, 'true_label': y_true,'pred_label': y_pred})
     
     #We identify errors by comparing predicted label to ground truth label.
     errors = df_predictions[df_predictions['true_label'] != df_predictions['pred_label']]
