@@ -13,7 +13,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 RAND_SEED = 7
 LABEL_NAMES = ["World", "Sports", "Business", "Sci/Tech"]
 
-
 def evaluate_logregmodel(x_train_vec, y_train, x_dev_vec, y_dev, x_test_vec, y_test):
     #We now train the logistic regression model using the vectorized training data.
     lr_model = train_log_reg(x_train_vec, y_train, seed=RAND_SEED) 
@@ -37,11 +36,9 @@ def evaluate_svm_plus_errors(x_train_vec, y_train, x_dev_vec, y_dev, x_test_vec,
     print("SVM Test Results:")
     y_pred_svm = evaluate_model(svm_model, x_test_vec, y_test)     #store predictions for error analysis
 
-    #Here, we identify examples where the SVM predicted incorrectly
-    errors_df = get_misclassified_examples(x_test_text, y_test, y_pred_svm, label_names=LABEL_NAMES)
+    errors_df = get_misclassified_examples(x_test_text, y_test, y_pred_svm, label_names=LABEL_NAMES) #Identify incorrect SVM examples
 
-    #We store these errors in csv
-    errors_df.to_csv("svm_errors.csv", index=False)
+    errors_df.to_csv("svm_errors.csv", index=False) #stores errors (see: svm_errors.csv)
 
     plot_confusion_matrix(y_test, y_pred_svm, label_names=LABEL_NAMES) #Finally, we display the confusion matrix
 
@@ -54,7 +51,7 @@ def main():
     x_dev_text, y_dev = preprocess_df(df_dev)
     x_test_text, y_test = preprocess_df(df_test)
 
-    vectorizer = TfidfVectorizer(stop_words='english', max_features=5000) #Initialize TF-IDF Vectorizer
+    vectorizer = TfidfVectorizer(stop_words='english', max_features=5000) #Create tf-idf Vectorizer
     
     #We fit only on the training set, then transform the Dev and Test sets
     x_train_vec = vectorizer.fit_transform(x_train_text)
