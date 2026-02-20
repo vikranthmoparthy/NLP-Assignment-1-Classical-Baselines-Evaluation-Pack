@@ -26,6 +26,6 @@ def load_and_split_data(seed=7):
         df_train_full,
         test_size=0.1,
         random_state=seed,
-        stratify=df_train_full['label']  #Ensures that the proportion of each class in label is preserved in the split
+        stratify=df_train_full['label']  #Ensures that the proportion of each class in label is preserved in the split.
     )
     return df_train, df_dev, df_test

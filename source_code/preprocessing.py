@@ -10,11 +10,10 @@ To write this code, we needed to look up some pandas and regex documentation.
 import re
 import pandas as pd
 
-def clean_text(text): #Function to normalize a single string of text
+def clean_text(text): #Function to converting string to lowercase
     if not isinstance(text, str):
         return ""
-    #By Converting string to lowercase, we ensure consistency.
-    text = text.lower()
+    text = text.lower()     
 
     #Remove non-alphanumeric characters, which should reduce noise
     text = re.sub(r'[^a-z0-9\s]', ' ', text) 
