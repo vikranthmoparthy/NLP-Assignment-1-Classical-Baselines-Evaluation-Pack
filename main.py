@@ -5,7 +5,7 @@ There isn't much new functionality in this file, but we looked a little deeper i
 """
 
 from source_code.data_loader import load_and_split_data
-from source_code.preprocessing import preprocess_df
+from source_code.preprocessing import preprocess_dataframe
 from source_code.models import train_log_reg, train_svm
 from source_code.evaluation import evaluate_model, plot_confusion_matrix, get_misclassified_examples
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -47,9 +47,9 @@ def main():
     df_train, df_dev, df_test = load_and_split_data(seed=RAND_SEED) #Fetch the data and create the splits
 
     #Clean and preprocess the text
-    x_train_text, y_train = preprocess_df(df_train)
-    x_dev_text, y_dev = preprocess_df(df_dev)
-    x_test_text, y_test = preprocess_df(df_test)
+    x_train_text, y_train = preprocess_dataframe(df_train)
+    x_dev_text, y_dev = preprocess_dataframe(df_dev)
+    x_test_text, y_test = preprocess_dataframe(df_test)
 
     vectorizer = TfidfVectorizer(stop_words='english', max_features=5000) #Create tf-idf Vectorizer
     

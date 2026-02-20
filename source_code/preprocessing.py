@@ -21,7 +21,7 @@ def clean_text(text): #Function to converting string to lowercase
 
     return text
 
-def preprocess_df(df): #This function prepares the dataframe by combining text fields and cleaning
+def preprocess_dataframe(df): #This function prepares the dataframe by combining text fields and cleaning
     #We concatenate columns of title and description with a single space.
     combined_text = df['title'].astype(str) + " " + df['description'].astype(str)
     x = combined_text.apply(clean_text) #We use pandas apply method to clean every row
