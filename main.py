@@ -18,10 +18,10 @@ def evaluate_logregmodel(x_train_vec, y_train, x_dev_vec, y_dev, x_test_vec, y_t
     lr_model = train_log_reg(x_train_vec, y_train, seed=RAND_SEED) 
     
     #report metrics for both dev and test sets
-    print("Logistic Regression Dev Results:")
+    print("Logistic Regression Develeopment results:")
     evaluate_model(lr_model, x_dev_vec, y_dev)
     
-    print("Logistic Regression Test Results:")
+    print("Logistic Regression Test results:")
     evaluate_model(lr_model, x_test_vec, y_test)
 
 
@@ -30,7 +30,7 @@ def evaluate_svm_plus_errors(x_train_vec, y_train, x_dev_vec, y_dev, x_test_vec,
     svm_model = train_svm(x_train_vec, y_train, seed=RAND_SEED)
     
     #report metrics for SVM
-    print("SVM Dev Results:")
+    print("SVM Development results:")
     evaluate_model(svm_model, x_dev_vec, y_dev)
     
     print("SVM Test Results:")
