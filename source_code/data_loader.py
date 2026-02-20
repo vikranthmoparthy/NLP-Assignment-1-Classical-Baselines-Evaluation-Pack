@@ -7,11 +7,11 @@ Sources:
     Stratified Splitting: https://shorturl.at/7FIUj
 """
 
-from datasets import load_dataset #from HuggingFace
+from datasets import load_dataset
 from sklearn.model_selection import train_test_split
 
 def load_and_split_data(seed=7):
-    url = "hf://datasets/sh0416/ag_news/" #Define file path for the ag news dataset.
+    url = "hf://datasets/sh0416/ag_news/" #File path for the ag news dataset.
 
     data_files = {"train": f"{url}train.jsonl","test": f"{url}test.jsonl"} 
 
@@ -22,8 +22,7 @@ def load_and_split_data(seed=7):
     df_train_full = dataset['train'].to_pandas()
     df_test = dataset['test'].to_pandas()
 
-    #Create a 90/10 validation split
-    df_train, df_dev = train_test_split(
+    df_train, df_dev = train_test_split( #We use a a 90/10 validation split
         df_train_full,
         test_size=0.1,
         random_state=seed,

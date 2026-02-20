@@ -32,7 +32,7 @@ def plot_confusion_matrix(y_true, y_predictions, label_names=None):
     plt.title("Confusion Matrix")
     plt.show()
 
-#Function that extracts and organizes samples where the model predicted the wrong category
+#Function that extracts / organizes samples where the model predicted the wrong category.
 def get_misclassified_examples(x_text, y_true, y_predictions, label_names=None): 
     #Here, we convert numeric class IDs back to readable names e.g."Sports".
     if label_names is not None:
@@ -42,7 +42,7 @@ def get_misclassified_examples(x_text, y_true, y_predictions, label_names=None):
         except (TypeError, IndexError):
             pass
     
-    #We create a dataframe to filter and view text alongside its labels.
+    #We create a dataframe view text alongside its labels.
     df_predictions = pd.DataFrame({'text': x_text, 'true_label': y_true,'prediction_label': y_predictions})
     
     #We identify errors by comparing predicted label to ground truth label.
