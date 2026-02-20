@@ -15,7 +15,7 @@ def clean_text(text): #Function to converting string to lowercase
         return ""
     text = text.lower()     
 
-    #Remove non-alphanumeric characters, which should reduce noise
+    #Remove non-alphanumeric characters
     text = re.sub(r'[^a-z0-9\s]', ' ', text) 
     text = re.sub(r'\s+', ' ', text).strip() #Replace multiple spaces with a single space, and also strip edges.
 
