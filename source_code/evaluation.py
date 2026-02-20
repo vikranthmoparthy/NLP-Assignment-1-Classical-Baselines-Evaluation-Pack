@@ -17,8 +17,8 @@ def evaluate_model(model, x_features, y_true): #Function to compute accuracy and
     acc = accuracy_score(y_true, y_pred)
     f1 = f1_score(y_true, y_pred, average='macro')
     
-    print(f"Accuracy: {acc:.4f}")
-    print(f"Macro F1: {f1:.4f}")
+    print(f"Accuracy: {acc}")
+    print(f"Macro F1: {f1}")
     
     return y_pred
 
