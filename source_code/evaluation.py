@@ -48,6 +48,6 @@ def get_misclassified_examples(x_text, y_true, y_pred, label_names=None):
     #We identify errors by comparing predicted label to ground truth label.
     errors = df_predictions[df_predictions['true_label'] != df_predictions['pred_label']]
     
-    print(f"Total Errors: {len(errors)}")
+    print(f"No. of Errors: {len(errors)}")
     
     return errors
