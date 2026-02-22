@@ -18,7 +18,7 @@ def evaluate_model(model, x_features, y_true): #Function to compute accuracy and
     f1 = f1_score(y_true, y_predictions, average='macro')
     
     print(f"Accuracy: {accuracy}")
-    print(f"Macro F1: {f1}")
+    print(f"Macro f1: {f1}")
     
     return y_predictions
 
@@ -34,7 +34,7 @@ def plot_confusion_matrix(y_true, y_predictions, label_names=None):
 
 #Function that extracts / organizes samples where the model predicted the wrong category.
 def get_misclassified_examples(x_text, y_true, y_predictions, label_names=None): 
-    #Here, we convert numeric class IDs back to readable names e.g."Sports".
+    #Here, we convert numeric class IDs back to names e.g."Sports".
     if label_names is not None:
         try:
             y_true = [label_names[i] for i in y_true]
